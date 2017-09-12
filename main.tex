@@ -1,0 +1,649 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.1.1 (14/2/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{background}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering \textsc{Notes of Microeconomic Theory}\\[15pt] % Book title
+{\Large By Mas-Colell Whinston And Green}\\[20pt] % Subtitle
+{\huge Huyi Chen}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent Copyright \copyright\ 2013 Huyi Chen\\ % Copyright notice
+
+\noindent \textsc{Published by Publisher}\\ % Publisher
+
+\noindent \textsc{book-website.com}\\ % URL
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\chapterimage{contents.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+\part{Part One: Individual Decision Making}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+\chapterimage{chapter_head_1.pdf} % Chapter heading image
+
+\chapter{Preference and Choice}
+
+\section{Preference-based Approach}
+
+\begin{definition}[Preference Relation]
+	Preference relation $\succsim$ is a binary relation defined on the set of alternatives $X$.
+\end{definition}
+
+\begin{definition}[Rational]
+	The preference relation $\succsim$ is \emph{rational} if it possesses the following two properties:
+	\begin{enumerate}
+		\item Completeness: $\forall x,y\in X,\;x\succsim y$ or $y\succsim x$.
+		\item Transitivity: $\forall x,y,z\in X,\;x\succsim y$ and $y\succsim z \implies x\succsim z$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[Strict Preference Relation]
+	Define the strict preference relation $\succ$ as follows:
+	\[	
+	x\succ y \Longleftrightarrow x\succsim y \ \text{but not}\  y\succsim x
+	\]
+\end{definition}
+
+\begin{definition}[Indeference Relation]
+	Define the strict preference relation $\sim$ as follows:
+	\[	
+	x\sim y \Longleftrightarrow x\succsim y \ \text{and}\  y\succsim x
+	\]
+\end{definition}
+
+\part{Part X}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+\chapterimage{chapter_head_1.pdf} % Chapter heading image
+
+\chapter{Text Chapter}
+
+\section{Paragraphs of Text}\index{Paragraphs of Text}
+
+\lipsum[1-7] % Dummy text
+
+%------------------------------------------------
+
+\section{Citation}\index{Citation}
+
+This statement requires citation \cite{book_key}; this one is more specific \cite[122]{article_key}.
+
+%------------------------------------------------
+
+\section{Lists}\index{Lists}
+
+Lists are useful to present information in a concise and/or ordered way\footnote{Footnote example...}.
+
+\subsection{Numbered List}\index{Lists!Numbered List}
+
+\begin{enumerate}
+\item The first item
+\item The second item
+\item The third item
+\end{enumerate}
+
+\subsection{Bullet Points}\index{Lists!Bullet Points}
+
+\begin{itemize}
+\item The first item
+\item The second item
+\item The third item
+\end{itemize}
+
+\subsection{Descriptions and Definitions}\index{Lists!Descriptions and Definitions}
+
+\begin{description}
+\item[Name] Description
+\item[Word] Definition
+\item[Comment] Elaboration
+\end{description}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2
+%----------------------------------------------------------------------------------------
+\chapterimage{chapter_head_2.pdf}
+\chapter{In-text Elements}
+
+\section{Theorems}\index{Theorems}
+
+This is an example of theorems.
+
+\subsection{Several equations}\index{Theorems!Several Equations}
+This is a theorem consisting of several equations.
+
+\begin{theorem}[Name of the theorem]
+In $E=\mathbb{R}^n$ all norms are equivalent. It has the properties:
+\begin{align}
+& \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+&  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
+\end{align}
+\end{theorem}
+
+\subsection{Single Line}\index{Theorems!Single Line}
+This is a theorem consisting of just one line.
+
+\begin{theorem}
+A set $\mathcal{D}(G)$ in dense in $L^2(G)$, $|\cdot|_0$.
+\end{theorem}
+
+%------------------------------------------------
+
+\section{Definitions}\index{Definitions}
+
+This is an example of a definition. A definition could be mathematical or it could define a concept.
+
+\begin{definition}[Definition name]
+Given a vector space $E$, a norm on $E$ is an application, denoted $||\cdot||$, $E$ in $\mathbb{R}^+=[0,+\infty[$ such that:
+\begin{align}
+& ||\mathbf{x}||=0\ \Rightarrow\ \mathbf{x}=\mathbf{0}\\
+& ||\lambda \mathbf{x}||=|\lambda|\cdot ||\mathbf{x}||\\
+& ||\mathbf{x}+\mathbf{y}||\leq ||\mathbf{x}||+||\mathbf{y}||
+\end{align}
+\end{definition}
+
+%------------------------------------------------
+
+\section{Notations}\index{Notations}
+
+\begin{notation}
+Given an open subset $G$ of $\mathbb{R}^n$, the set of functions $\varphi$ are:
+\begin{enumerate}
+\item Bounded support $G$;
+\item Infinitely differentiable;
+\end{enumerate}
+a vector space is denoted by $\mathcal{D}(G)$.
+\end{notation}
+
+%------------------------------------------------
+
+\section{Remarks}\index{Remarks}
+
+This is an example of a remark.
+
+\begin{remark}
+The concepts presented here are now in conventional employment in mathematics. Vector spaces are taken over the field $\mathbb{K}=\mathbb{R}$, however, established properties are easily extended to $\mathbb{K}=\mathbb{C}$.
+\end{remark}
+
+%------------------------------------------------
+
+\section{Corollaries}\index{Corollaries}
+
+This is an example of a corollary.
+
+\begin{corollary}[Corollary name]
+The concepts presented here are now in conventional employment in mathematics. Vector spaces are taken over the field $\mathbb{K}=\mathbb{R}$, however, established properties are easily extended to $\mathbb{K}=\mathbb{C}$.
+\end{corollary}
+
+%------------------------------------------------
+
+\section{Propositions}\index{Propositions}
+
+This is an example of propositions.
+
+\subsection{Several equations}\index{Propositions!Several Equations}
+
+\begin{proposition}[Proposition name]
+It has the properties:
+\begin{align}
+& \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+&  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
+\end{align}
+\end{proposition}
+
+\subsection{Single Line}\index{Propositions!Single Line}
+
+\begin{proposition}
+Let $f,g\in L^2(G)$; if $\forall \varphi\in\mathcal{D}(G)$, $(f,\varphi)_0=(g,\varphi)_0$ then $f = g$.
+\end{proposition}
+
+%------------------------------------------------
+
+\section{Examples}\index{Examples}
+
+This is an example of examples.
+
+\subsection{Equation and Text}\index{Examples!Equation and Text}
+
+\begin{example}
+Let $G=\{x\in\mathbb{R}^2:|x|<3\}$ and denoted by: $x^0=(1,1)$; consider the function:
+\begin{equation}
+f(x)=\left\{\begin{aligned} & \mathrm{e}^{|x|} & & \text{si $|x-x^0|\leq 1/2$}\\
+& 0 & & \text{si $|x-x^0|> 1/2$}\end{aligned}\right.
+\end{equation}
+The function $f$ has bounded support, we can take $A=\{x\in\mathbb{R}^2:|x-x^0|\leq 1/2+\epsilon\}$ for all $\epsilon\in\intoo{0}{5/2-\sqrt{2}}$.
+\end{example}
+
+\subsection{Paragraph of Text}\index{Examples!Paragraph of Text}
+
+\begin{example}[Example name]
+\lipsum[2]
+\end{example}
+
+%------------------------------------------------
+
+\section{Exercises}\index{Exercises}
+
+This is an example of an exercise.
+
+\begin{exercise}
+This is a good place to ask a question to test learning progress or further cement ideas into students' minds.
+\end{exercise}
+
+%------------------------------------------------
+
+\section{Problems}\index{Problems}
+
+\begin{problem}
+What is the average airspeed velocity of an unladen swallow?
+\end{problem}
+
+%------------------------------------------------
+
+\section{Vocabulary}\index{Vocabulary}
+
+Define a word to improve a students' vocabulary.
+
+\begin{vocabulary}[Word]
+Definition of word.
+\end{vocabulary}
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+%\part{Part Two}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
+
+\chapterimage{chapter_head_3.pdf} % Chapter heading image
+
+\chapter{Presenting Information}
+
+\section{Table}\index{Table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\caption{Table caption}
+\end{table}
+
+%------------------------------------------------
+
+\section{Figure}\index{Figure}
+
+\begin{figure}[h]
+\centering\includegraphics[scale=0.5]{placeholder}
+\caption{Figure caption}
+\end{figure}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+\part{Part Two}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
+\chapterimage{chapter_head_4.pdf} % Chapter heading image
+
+\chapter{Limit Of Sequence}
+
+\section{Cauchy proposition}
+
+\begin{theorem}
+    If a sequence $\{x_n\}$ converges to $l$, then its arithmetic mean of the preceding $n$ terms also converges to $l$, namely
+    \begin{equation}
+    \lim\limits_{n\to\infty}\frac{x_1+x_2+\cdots+x_n}{n}=\lim\limits_{n\to\infty}x_n=l.
+    \end{equation}
+\end{theorem}
+
+\begin{proof}
+	According to the condition $\lim\limits_{n\to\infty}x_n=l$, given $\epsilon>0$, there exists a positive number $N$ such that $|x_n-l|<\epsilon$ for all $n>N$. Assume $n>N$ and in this case we can make an estimation as follows:
+	\begin{align*}
+	\left|\frac{x_1+x_2+\cdots+x_n}{n}-l\right|
+	&=\frac{\left|(x_1-l)+(x_2-l)+\cdots+(x_n-l)\right|}{n}\\
+	&\leqslant\frac{\left|(x_1-l)+\cdots+(x_N-l)\right|}{n}+\frac{\left|(x_{N+1}-l)+\cdots+(x_n-l)\right|}{n}\\
+	&<\frac{M}{n}+\frac{n-N}{n}\epsilon,
+	\end{align*}
+    where $M=\left|(x_1-l)+\cdots+(x_N-l)\right|$ is a finite number. Thus we can see that if let
+	\[
+	N_1=\max\{N,\left[\frac{M}{\epsilon}\right]\},
+	\]
+	then for all $n>N_1$ it follows that
+	\[
+		\left|\frac{x_1+x_2+\cdots+x_n}{n}-l\right|<2\epsilon.
+	\]
+	It clearly implies $
+	\lim\limits_{n\to\infty}\dfrac{x_1+x_2+\cdots+x_n}{n}=l.
+$
+
+\end{proof}
+
+\begin{remark}
+    \begin{enumerate}
+    \item
+	If $x_n$ approaches positive(or negative) infinity, Cauchy proposition still holds. In fact, from $x_n\to+\infty(n\to\infty)$ we see $x_n$ can be greater than any given positive number $X$ when $n$ is large enough. Similarly we can separate the arithmetic mean into two parts and show the second part $(1-N/n)X$ greater than $X/2$ for a sufficiently large $n$.\\
+	\item
+	The converse of Cauchy proposition is generally not true. A trivial example is $x_n=(-1)^n$. Then
+	\[
+	\lim\limits_{n\to\infty}\frac{x_1+x_2+\cdots+x_n}{n}=0
+	\]
+	while $x_n$ has no limit.
+    \end{enumerate}
+\end{remark}
+\vspace{3mm}
+\begin{corollary}
+	If a positive term sequence $\{x_n\}$ converges to $l$, then its geometric mean of the preceding $n$ terms also converges to $l$, namely
+	\begin{equation}
+	\lim\limits_{n\to\infty}\sqrt[^n]{x_1x_2\cdots x_n}=\lim\limits_{n\to\infty}x_n=l.
+	\end{equation}
+\end{corollary}
+
+\begin{proof}
+	Applying the mean inequality we have
+    \[
+    \frac{n}{\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}}\leqslant\sqrt[^n]{x_1x_2\cdots x_n}\leqslant\frac{x_1+x_2+\cdots+x_n}{n}.
+    \]
+    Notice that $\lim\limits_{n\to\infty}x_n=l$ implies $\lim\limits_{n\to\infty}\dfrac{1}{x_n}=\dfrac{1}{l}$. From Theorem 4.1.1 we can see
+    \[
+    \lim\limits_{n\to\infty}\frac{n}{\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}}=\lim\limits_{n\to\infty}\left(\frac{\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}}{n}\right)^{-1}=\left(\lim\limits_{n\to\infty}\frac{\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}}{n}\right)^{-1}=l.
+    \]
+    And it has been shown that
+    \[
+    \lim\limits_{n\to\infty}\frac{x_1+x_2+\cdots+x_n}{n}=l.
+    \]
+    According to squeeze theorem, we can assert that the limit $\lim\limits_{n\to\infty}\sqrt[^n]{x_1x_2\cdots x_n}$ exists and also equals $l$.   
+\end{proof}
+
+\vspace{3mm}
+
+\begin{proposition}
+	If $x_n>0(n=1,2,\cdots)$ and the limit $\lim\limits_{n\to\infty}\dfrac{x_{n+1}}{x_n}$ exists, the limit $\lim\limits_{n\to\infty}\sqrt[^n]{x_n}$ also exists and
+	\[
+	\lim\limits_{n\to\infty}\sqrt[^n]{x_n}=\lim\limits_{n\to\infty}\frac{x_{n+1}}{x_n}.
+	\]
+\end{proposition}
+
+\begin{proof}
+    Assume $x_0=1$ and by Corollary 4.1.2 we immediately get
+	\[
+	\lim\limits_{n\to\infty}\sqrt[^n]{x_n}=\lim\limits_{n\to\infty}\sqrt[^n]{\frac{x_1}{x_0}\frac{x_2}{x_1}\cdots\frac{x_{n}}{x_{n-1}}}=\lim\limits_{n\to\infty}\frac{x_n}{x_{n-1}}=\lim\limits_{n\to\infty}\frac{x_{n+1}}{x_n}.
+	\]
+\end{proof}
+
+\begin{example}
+	Find the limit $\lim\limits_{n\to\infty}\dfrac{n}{\sqrt[^n]{n!}}$.
+\end{example}
+
+\section{Stolz–Cesàro theorem}
+
+\begin{theorem}[Stolz–Cesàro theorem with form of $\dfrac{0}{0}$]
+	Assume $\{a_n\}$ and $\{b_n\}$ are two infinitesimal sequences of real numbers and $\{a_n\}$ is a strictly decreasing. If
+	\[
+		\lim\limits_{n\to\infty}\frac{b_{n+1}-b_n}{a_{n+1}-a_n}=l,
+	\]
+    where $l$ is finite or $\pm\infty$, then we have
+	\[
+	    \lim\limits_{n\to\infty}\frac{b_n}{a_n}=l.
+	\]
+\end{theorem}
+
+\begin{proof}
+	Here we only prove it for a finite number $l$. According to the assumption, for every positive number $\epsilon$, there exists another positive number $N$ such that
+	\[
+	\left|\frac{b_{n+1}-b_n}{a_{n+1}-a_n}-l\right|<\epsilon
+	\]
+	for all $n>N$. Since $a_n>a_{n+1}$ for all $n\in\mathbb{N^*}$, we have
+	\[
+	(l-\epsilon)(a_n-a_{n+1})<b_n-b_{n+1}<(l+\epsilon)(a_n-a_{n+1}).
+	\]
+	Given $m>n$, replace $n$ by $n+1,n+2,\cdots,m-1$. Then add up the $m-n$ inequalities and we obtain
+	\[
+	(l-\epsilon)(a_n-a_m)<b_n-b_m<(l+\epsilon)(a_n-a_m),
+	\]
+	or
+	\[
+	\left|\frac{b_n-b_m}{a_n-a_m}-l\right|<\epsilon.
+	\]
+	Note that $\lim\limits_{m\to\infty}a_m=\lim\limits_{m\to\infty}b_m=0$. When $m\to\infty$, for all $n>N$ it follows that
+	\[
+	\left|\frac{b_n}{a_n}-l\right|\leqslant\epsilon.
+	\]
+	With the arbitrariness of selection of $\epsilon$, this implies $\lim\limits_{n\to\infty}\dfrac{b_n}{a_n}=l$.
+\end{proof}
+
+\vspace{3mm}
+
+\begin{theorem}[Stolz–Cesàro theorem with form of $\dfrac{*}{\infty}$]
+	Asume $\{a_n\}$ is a strictly increasing sequence such that $\lim a_n = \infty$. If
+	\[
+	\lim\limits_{n\to\infty}\frac{b_{n+1}-b_n}{a_{n+1}-a_n},
+	\]
+	where $l$ is finite or $\pm\infty$, then we have
+	\[
+	\lim\limits_{n\to\infty}\frac{b_n}{a_n}=l.
+	\]
+\end{theorem}
+
+\begin{proof}
+	We just consider a finite $l$. For every positive number $\epsilon$, there exists $N_1\in\mathbb{N^*}$ such that
+	\[
+	\left|\frac{b_{n+1}-b_n}{a_{n+1}-a_n}-l\right|<\epsilon
+	\]
+	for all $n>N_1$. Since $a_{n+1}>a_n$ for all $n\in\mathbb{N^*}$, we have
+	\[
+	(l-\epsilon)(a_{n+1}-a_{n})<b_{n+1}-b_{n}<(l+\epsilon)(a_{n+1}-a_{n}).
+	\]
+	Given $N_1$, replace $n$ by $N_1,N_1+1,\cdots,n-1$. Then add up the $n-N$ inequalities and we obtain
+	\[
+	(l-\epsilon)(a_n-a_{N_1})<b_n-b_{N_1}<(l+\epsilon)(a_n-a_{N_1}),
+	\]
+	or
+	\[
+	\left|\frac{b_n-b_{N_1}}{a_n-a_{N_1}}-l\right|<\epsilon.
+	\]
+	In order to estimate the value of $\left|\dfrac{b_n}{a_n}-l\right|$, consider the following identity
+	\[
+	\frac{b_n}{a_n}-l=\left(1-\frac{a_{N_1}}{a_n}\right)\left(\frac{b_n-b_{N_1}}{a_n-a_{N_1}}-l\right)+\frac{b_n-la_{N_1}}{a_n}.
+	\]
+	Since $\lim\limits_{n\to\infty}a_n=+\infty$, there exsits a positive number $N_2$ such that for all $n>N_2$
+	\[
+	0<\left|\frac{a_N}{a_n}\right|<1\Leftrightarrow0<1-\frac{a_N}{a_n}<2
+	\]
+	and
+	\[
+	\left|\frac{b_n-la_{N_1}}{a_n}\right|<\epsilon.
+	\]
+	Thus for all $n>\max\{N_1,N_2\}$ we have
+	\[
+	\left|\dfrac{b_n}{a_n}-l\right|<3\epsilon,
+	\]
+	which indicates $\lim\limits_{n\to\infty}\dfrac{b_n}{a_n}=l$.
+
+\end{proof}
+
+
+
+
+\section{Subsequence}
+
+\begin{proposition}
+    Every real sequence $\{a_n\}$ has a monotonic subsequence.
+\end{proposition}
+
+\begin{proof}
+	Define $X=\{n\in \mathbb{N^*}| \;\forall k\ge n, a_k\ge a_n\}$, which is a subset of the index set of the sequence $\{a_n\}$.\\
+	If $X$ is an infinite set, we can find an arrangement of the elements in $X$: $n_1<n_2<\cdots<n_i<\cdots(n_i\in X)$. Thus we get an increasing subsequence of $\{a_n\}$: $a_{n_1},a_{n_2},\cdots,a_{n_i},\cdots$.\\
+	If $X$ is a finite set, denote $N=\max X$. For every $n>N$, there exists a number $k>n$ such that $a_k<a_n$. Let $n_1=N+1$ and there exists a number $n_2>n_1$ such that $a_{n_2}<a_{n_1}$. Since $n_2$ is also greater than $N$, there exists $n_3>n_2$ such that $a_{n_3}<a_{n_2}$. Repeating this process will come to a decreasing subsequence of $\{a_n\}$.
+\end{proof}
+
+\chapterimage{chapter_head_5.pdf}
+
+
+\chapter{Limit of function}
+
+\section{Equivalent Infinitesimal}
+
+\begin{definition}
+If the relation $f(x)=\gamma(x)g(x)$ holds ultimately over $\mathcal{B}$ where $\lim\limits_{\mathcal{B}}{\gamma(x)}=1$, we say that \emph{the function $f$ behaves asymptotically like $g$ over $\mathcal{B}$}, or, more briefly, that $f$ \emph{is equivalent to $g$ over $\mathcal{B}$}.
+
+
+
+\end{definition}
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+\part{Part N}
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\chapterimage{chapter_Bibliography.pdf}
+
+\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
+\section*{Books}
+\addcontentsline{toc}{section}{Books}
+\printbibliography[heading=bibempty,type=book]
+\section*{Articles}
+\addcontentsline{toc}{section}{Articles}
+\printbibliography[heading=bibempty,type=article]
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+
+\chapterimage{chapter_Index.pdf}
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+\printindex
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
