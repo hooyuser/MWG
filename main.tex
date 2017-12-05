@@ -380,7 +380,7 @@ We assume throughout that the preference relation $\succsim$ is rational in the 
 	\]
 	or alternatively
 	\[
-	\forall x,y\in\mathbb{R}_+^L,\;\forall \alpha\in[0,1],\;u(\alpha x+(1-\alpha)y)\geqslant \min\{u(x),u(y)\}).
+	\forall x,y\in\mathbb{R}_+^L,\;\forall \alpha\in[0,1],\;u(\alpha x+(1-\alpha)y)\geqslant \min\{u(x),u(y)\}.
 	\]
 \end{definition}
 
@@ -410,6 +410,150 @@ We assume throughout that the preference relation $\succsim$ is rational in the 
 
 
 \section{The Utility Maximization Problem}
+
+Assume there exists a rational, continuous and locally nonsatiated preference relation $\succsim$ on $X=\mathbb{R}_+^L$, which is represented by a continuous utility function $u(x)$. 
+
+The consumer's problem of choosing her most preferred consumption bundle
+given prices $p\gg 0$ and wealth level $w > 0$ can now be stated as the following utility maximization problem (UMP):
+\begin{align*}
+	\max_{x\ge 0} \quad & u(x) \\
+	                    & \mathrm{s.t.}\ \; p\cdot x\le w.
+\end{align*}
+
+\begin{proposition}
+	If $p\gg 0$ and $u(\cdot)$ is continuous, then the utility maximization problem has a solution.
+\end{proposition}
+
+\begin{definition}[Walrasian Demand Correspondence/Function]
+	The rule that assigns the set of optimal consumption vectors in the UMP to each price wealth situation $(p, w)\gg 0$ is denoted by $x(p, w)$ and is known as the
+	\emph{Walrasian demand correspondence}. That is
+	\[
+	x(\cdot,\cdot):\;(p,w)\mapsto \{x^*\in\mathbb{R}_+^L|u(x^*)=\max_{x\ge 0}\, u(x)\;\mathrm{s.t.}\; p\cdot x\le w\}
+	\]	
+	\noindent When $x(p, w)$ is single-valued for all $(p, w)$, we refer to it as the \emph{Walrasian demand function}.
+	
+\end{definition}
+
+
+\begin{proposition}
+	 Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated preference relation $\succsim$ defined on the consumption set $X=\mathbb{R}_+^L$. Then the Walrasian demand correspondence $x(p, w)$ possesses the following
+	 properties:
+	 \begin{enumerate}
+	 	\item Homogeneity of degree zero in $( p , w )$: $x(\alpha p, \alpha w) = x(p, w)$ for any $p, w$	and scalar $\alpha > 0$.
+	 	\item Walras' law: $p\cdot x = w$ for all $x\in x(p,w)$.
+	 	\item Convexity/uniqueness:
+	 	
+	 	 If $\succsim$ is convex, so that $u(\cdot)$ is quasiconcave, then $x(p, w)$ is a convex set. 
+	 	 
+	 	 If $\succsim$ is strictly convex, so that $u(\cdot)$ is strictly quasiconcave, then $x(p, w)$ consists of a single element.
+	 \end{enumerate}
+\end{proposition}
+
+\begin{theorem}[Kuhn Tucker Conditions in UMP]
+	if $x^* \in x(p,w)$ is a solution to the UMP and $u(x)$ is continuously differentiable, then there exists a
+	Lagrange multiplier $\lambda\ge0$ such that for all $l = 1,\cdots, L$:
+	\[
+	\frac{\partial u(x^*)}{\partial x_l}\le \lambda p_l,\ \;\text{with equality if } x^*_l > 0,
+	\]
+	or equivalently in matrix notation, where $\nabla u(x)= \left[\frac{\partial u(x)}{\partial x_l},\frac{\partial u(x)}{\partial x_l},\cdots,\frac{\partial u(x)}{\partial x_L} \right]^\mathrm{T}$,
+	\begin{align*}
+	&\nabla u(x^*)\le \lambda p, \\
+    &x^*_l\left(\frac{\partial u(x^*)}{\partial x_l}-\lambda p_l\right)= 0.
+	\end{align*}
+\end{theorem}
+
+The Lagrange multiplier $\lambda$ in the first-order conditions gives
+the shadow value of relaxing the constraint in the UMP. It therefore equals the consumer's marginal utility value of wealth at the optimum.
+To see this directly, consider for simplicity the case where $x(p, w)$
+is a differentiable function and $x(p, w) \gg 0$. Thus we have
+\[
+D_wu(x(p,w))=\nabla u(x(p,w))\cdot D_wx(p,w)=\lambda p\cdot D_wx(p,w)=\lambda,
+\]
+where the last equality follows because $p\cdot x(p, w) = w$ holds for all $w$ and differentiate it with respect to $w$ shows $p\cdot D_wx(p,w)= 1$.
+
+\begin{definition}[Indirect Utility Function]
+	For each $(p, w) \gg 0$, the utility value of the UMP is denoted $v(p, w)\in \mathbb{R}$. It is equal to $u(x^*)$ for any $x^*\in x(p, w)$, denoted as
+	\[
+	v(p, w)=u(x(p, w)).
+	\]
+	
+\end{definition}
+
+
+\begin{proposition}
+Suppose that $u(\cdot)$ is a continuous utility function representing a
+locally nonsatiated preference relation $\succsim$ defined on the consumption set $X=\mathbb{R}_+^L$. The indirect utility function $v(p, w)$ is	
+\begin{enumerate}
+	\item Homogeneous of degree zero.
+	\item Strictly increasing in $w$ and nonincreasing in $p_l$ for any $l$.
+	\item Quasiconvex: the set $\{(p, w)| v(p, w)\le \bar{v}\}$ is convex for any $\bar{v}$.
+	\item Continuous in $p$ and $w$. 
+\end{enumerate}
+\end{proposition}
+
+\section{The Expenditure Minimization Problem}
+
+In this section, we study the following expenditure minimization problem (EMP) for
+$p\gg 0$ and $u > u(0)$:
+\begin{align*}
+\min_{x\ge 0} \quad &  p\cdot x\\
+& \mathrm{s.t.}\ \; u(x)\le u.
+\end{align*}
+
+
+\begin{proposition}
+Proposition 3.E.1: Suppose that u(.) is a continuous utility function representing a
+locally nonsatiated preference relation 2 defined on the consumption set X = R
+and that the price vector is p >> 0. We have
+(i) If x* is optimal in the UMP when wealth is w > 0, then x* is optimal in the
+EMP when the required utility level is u(x*). Moreover, the minimized
+expenditure level in this EMP is exactly w.
+(ii) If x* is optimal in the EMP when the required utility level is u > u(O), then
+x* is optimal in the UMP when wealth is p-x*. Moreover, the maximized
+utility level in this UMP is exactly u.
+
+\end{proposition}
+
+
+\begin{definition}[Hicksian Demand Correspondence/Function]
+The set of optimal commodity vectors in the EMP is denoted h(p, u) c [Wt and is
+known as the Ilic~li.siun, or c~ompensuted, demund correspondence, or function if single-valued. That is
+\[
+h(\cdot,\cdot):\;(p,u)\mapsto \{x^*\in\mathbb{R}_+^L|\;p\cdot x^*=\min_{x\ge 0}\, p\cdot x\;\mathrm{s.t.}\; u(x)\le u\}
+\]	
+\end{definition}
+
+\begin{proposition}
+	 Suppose that u(.) is a continuous utility function representing a
+	locally nonsatiated preference relation 2 defined on the consumption set X = R!+.
+	Then for any p >> 0, the Hicksian demand correspondence h(p, u) possesses the
+	following properties:
+	\begin{enumerate}
+		\item Homogeneity of degree zero in p: h(crp, u) = h(p, u) for any p, u and a > 0.
+		\item No excess utility: For any x E h(p, u), u(x) = u.
+		\item Convexity/uniqueness: If 2 is convex, then h(p, u) is a convex set; and	if 2 is strictly convex, so that u(.) is strictly quasiconcave, then there is
+		a unique element in h(p, u).
+	\end{enumerate}
+\end{proposition}
+
+\begin{theorem}[Kuhn Tucker Conditions in EMP]
+	if $x^* \in h(p,w)$ is a solution to the EMP and $u(x)$ is continuously differentiable, then there exists a
+	Lagrange multiplier $\lambda\ge0$ such that for all $l = 1,\cdots, L$:
+	\[
+	p_l\ge\lambda\frac{\partial u(x^*)}{\partial x_l}  ,\ \;\text{with equality if } x^*_l > 0,
+	\]
+	or equivalently in matrix notation, where $\nabla u(x)= \left[\frac{\partial u(x)}{\partial x_l},\frac{\partial u(x)}{\partial x_l},\cdots,\frac{\partial u(x)}{\partial x_L} \right]^\mathrm{T}$,
+	\begin{align*}
+	& p\ge\lambda\nabla u(x^*) , \\
+	&x^*_l\left(p_l-\lambda\frac{\partial u(x^*)}{\partial x_l} \right)= 0.
+	\end{align*}
+\end{theorem}
+
+
+
+\section{Relationships between Demand, Indirect Utility,
+	and Expenditure Functions}
+
 
 
 \part{Part X}
@@ -669,196 +813,7 @@ Treatment 3 & 0.0009271 & 0.296 \\
 %----------------------------------------------------------------------------------------
 \chapterimage{chapter_head_4.pdf} % Chapter heading image
 
-\chapter{Limit Of Sequence}
 
-\section{Cauchy proposition}
-
-\begin{theorem}
-    If a sequence $\{x_n\}$ converges to $l$, then its arithmetic mean of the preceding $n$ terms also converges to $l$, namely
-    \begin{equation}
-    \lim\limits_{n\to\infty}\frac{x_1+x_2+\cdots+x_n}{n}=\lim\limits_{n\to\infty}x_n=l.
-    \end{equation}
-\end{theorem}
-
-\begin{proof}
-	According to the condition $\lim\limits_{n\to\infty}x_n=l$, given $\epsilon>0$, there exists a positive number $N$ such that $|x_n-l|<\epsilon$ for all $n>N$. Assume $n>N$ and in this case we can make an estimation as follows:
-	\begin{align*}
-	\left|\frac{x_1+x_2+\cdots+x_n}{n}-l\right|
-	&=\frac{\left|(x_1-l)+(x_2-l)+\cdots+(x_n-l)\right|}{n}\\
-	&\leqslant\frac{\left|(x_1-l)+\cdots+(x_N-l)\right|}{n}+\frac{\left|(x_{N+1}-l)+\cdots+(x_n-l)\right|}{n}\\
-	&<\frac{M}{n}+\frac{n-N}{n}\epsilon,
-	\end{align*}
-    where $M=\left|(x_1-l)+\cdots+(x_N-l)\right|$ is a finite number. Thus we can see that if let
-	\[
-	N_1=\max\{N,\left[\frac{M}{\epsilon}\right]\},
-	\]
-	then for all $n>N_1$ it follows that
-	\[
-		\left|\frac{x_1+x_2+\cdots+x_n}{n}-l\right|<2\epsilon.
-	\]
-	It clearly implies $
-	\lim\limits_{n\to\infty}\dfrac{x_1+x_2+\cdots+x_n}{n}=l.
-$
-
-\end{proof}
-
-\begin{remark}
-    \begin{enumerate}
-    \item
-	If $x_n$ approaches positive(or negative) infinity, Cauchy proposition still holds. In fact, from $x_n\to+\infty(n\to\infty)$ we see $x_n$ can be greater than any given positive number $X$ when $n$ is large enough. Similarly we can separate the arithmetic mean into two parts and show the second part $(1-N/n)X$ greater than $X/2$ for a sufficiently large $n$.\\
-	\item
-	The converse of Cauchy proposition is generally not true. A trivial example is $x_n=(-1)^n$. Then
-	\[
-	\lim\limits_{n\to\infty}\frac{x_1+x_2+\cdots+x_n}{n}=0
-	\]
-	while $x_n$ has no limit.
-    \end{enumerate}
-\end{remark}
-\vspace{3mm}
-\begin{corollary}
-	If a positive term sequence $\{x_n\}$ converges to $l$, then its geometric mean of the preceding $n$ terms also converges to $l$, namely
-	\begin{equation}
-	\lim\limits_{n\to\infty}\sqrt[^n]{x_1x_2\cdots x_n}=\lim\limits_{n\to\infty}x_n=l.
-	\end{equation}
-\end{corollary}
-
-\begin{proof}
-	Applying the mean inequality we have
-    \[
-    \frac{n}{\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}}\leqslant\sqrt[^n]{x_1x_2\cdots x_n}\leqslant\frac{x_1+x_2+\cdots+x_n}{n}.
-    \]
-    Notice that $\lim\limits_{n\to\infty}x_n=l$ implies $\lim\limits_{n\to\infty}\dfrac{1}{x_n}=\dfrac{1}{l}$. From Theorem 4.1.1 we can see
-    \[
-    \lim\limits_{n\to\infty}\frac{n}{\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}}=\lim\limits_{n\to\infty}\left(\frac{\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}}{n}\right)^{-1}=\left(\lim\limits_{n\to\infty}\frac{\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}}{n}\right)^{-1}=l.
-    \]
-    And it has been shown that
-    \[
-    \lim\limits_{n\to\infty}\frac{x_1+x_2+\cdots+x_n}{n}=l.
-    \]
-    According to squeeze theorem, we can assert that the limit $\lim\limits_{n\to\infty}\sqrt[^n]{x_1x_2\cdots x_n}$ exists and also equals $l$.   
-\end{proof}
-
-\vspace{3mm}
-
-\begin{proposition}
-	If $x_n>0(n=1,2,\cdots)$ and the limit $\lim\limits_{n\to\infty}\dfrac{x_{n+1}}{x_n}$ exists, the limit $\lim\limits_{n\to\infty}\sqrt[^n]{x_n}$ also exists and
-	\[
-	\lim\limits_{n\to\infty}\sqrt[^n]{x_n}=\lim\limits_{n\to\infty}\frac{x_{n+1}}{x_n}.
-	\]
-\end{proposition}
-
-\begin{proof}
-    Assume $x_0=1$ and by Corollary 4.1.2 we immediately get
-	\[
-	\lim\limits_{n\to\infty}\sqrt[^n]{x_n}=\lim\limits_{n\to\infty}\sqrt[^n]{\frac{x_1}{x_0}\frac{x_2}{x_1}\cdots\frac{x_{n}}{x_{n-1}}}=\lim\limits_{n\to\infty}\frac{x_n}{x_{n-1}}=\lim\limits_{n\to\infty}\frac{x_{n+1}}{x_n}.
-	\]
-\end{proof}
-
-\begin{example}
-	Find the limit $\lim\limits_{n\to\infty}\dfrac{n}{\sqrt[^n]{n!}}$.
-\end{example}
-
-\section{Stolz–Cesàro theorem}
-
-\begin{theorem}[Stolz–Cesàro theorem with form of $\dfrac{0}{0}$]
-	Assume $\{a_n\}$ and $\{b_n\}$ are two infinitesimal sequences of real numbers and $\{a_n\}$ is a strictly decreasing. If
-	\[
-		\lim\limits_{n\to\infty}\frac{b_{n+1}-b_n}{a_{n+1}-a_n}=l,
-	\]
-    where $l$ is finite or $\pm\infty$, then we have
-	\[
-	    \lim\limits_{n\to\infty}\frac{b_n}{a_n}=l.
-	\]
-\end{theorem}
-
-\begin{proof}
-	Here we only prove it for a finite number $l$. According to the assumption, for every positive number $\epsilon$, there exists another positive number $N$ such that
-	\[
-	\left|\frac{b_{n+1}-b_n}{a_{n+1}-a_n}-l\right|<\epsilon
-	\]
-	for all $n>N$. Since $a_n>a_{n+1}$ for all $n\in\mathbb{N^*}$, we have
-	\[
-	(l-\epsilon)(a_n-a_{n+1})<b_n-b_{n+1}<(l+\epsilon)(a_n-a_{n+1}).
-	\]
-	Given $m>n$, replace $n$ by $n+1,n+2,\cdots,m-1$. Then add up the $m-n$ inequalities and we obtain
-	\[
-	(l-\epsilon)(a_n-a_m)<b_n-b_m<(l+\epsilon)(a_n-a_m),
-	\]
-	or
-	\[
-	\left|\frac{b_n-b_m}{a_n-a_m}-l\right|<\epsilon.
-	\]
-	Note that $\lim\limits_{m\to\infty}a_m=\lim\limits_{m\to\infty}b_m=0$. When $m\to\infty$, for all $n>N$ it follows that
-	\[
-	\left|\frac{b_n}{a_n}-l\right|\leqslant\epsilon.
-	\]
-	With the arbitrariness of selection of $\epsilon$, this implies $\lim\limits_{n\to\infty}\dfrac{b_n}{a_n}=l$.
-\end{proof}
-
-\vspace{3mm}
-
-\begin{theorem}[Stolz–Cesàro theorem with form of $\dfrac{*}{\infty}$]
-	Asume $\{a_n\}$ is a strictly increasing sequence such that $\lim a_n = \infty$. If
-	\[
-	\lim\limits_{n\to\infty}\frac{b_{n+1}-b_n}{a_{n+1}-a_n},
-	\]
-	where $l$ is finite or $\pm\infty$, then we have
-	\[
-	\lim\limits_{n\to\infty}\frac{b_n}{a_n}=l.
-	\]
-\end{theorem}
-
-\begin{proof}
-	We just consider a finite $l$. For every positive number $\epsilon$, there exists $N_1\in\mathbb{N^*}$ such that
-	\[
-	\left|\frac{b_{n+1}-b_n}{a_{n+1}-a_n}-l\right|<\epsilon
-	\]
-	for all $n>N_1$. Since $a_{n+1}>a_n$ for all $n\in\mathbb{N^*}$, we have
-	\[
-	(l-\epsilon)(a_{n+1}-a_{n})<b_{n+1}-b_{n}<(l+\epsilon)(a_{n+1}-a_{n}).
-	\]
-	Given $N_1$, replace $n$ by $N_1,N_1+1,\cdots,n-1$. Then add up the $n-N$ inequalities and we obtain
-	\[
-	(l-\epsilon)(a_n-a_{N_1})<b_n-b_{N_1}<(l+\epsilon)(a_n-a_{N_1}),
-	\]
-	or
-	\[
-	\left|\frac{b_n-b_{N_1}}{a_n-a_{N_1}}-l\right|<\epsilon.
-	\]
-	In order to estimate the value of $\left|\dfrac{b_n}{a_n}-l\right|$, consider the following identity
-	\[
-	\frac{b_n}{a_n}-l=\left(1-\frac{a_{N_1}}{a_n}\right)\left(\frac{b_n-b_{N_1}}{a_n-a_{N_1}}-l\right)+\frac{b_n-la_{N_1}}{a_n}.
-	\]
-	Since $\lim\limits_{n\to\infty}a_n=+\infty$, there exsits a positive number $N_2$ such that for all $n>N_2$
-	\[
-	0<\left|\frac{a_N}{a_n}\right|<1\Leftrightarrow0<1-\frac{a_N}{a_n}<2
-	\]
-	and
-	\[
-	\left|\frac{b_n-la_{N_1}}{a_n}\right|<\epsilon.
-	\]
-	Thus for all $n>\max\{N_1,N_2\}$ we have
-	\[
-	\left|\dfrac{b_n}{a_n}-l\right|<3\epsilon,
-	\]
-	which indicates $\lim\limits_{n\to\infty}\dfrac{b_n}{a_n}=l$.
-
-\end{proof}
-
-
-
-
-\section{Subsequence}
-
-\begin{proposition}
-    Every real sequence $\{a_n\}$ has a monotonic subsequence.
-\end{proposition}
-
-\begin{proof}
-	Define $X=\{n\in \mathbb{N^*}| \;\forall k\ge n, a_k\ge a_n\}$, which is a subset of the index set of the sequence $\{a_n\}$.\\
-	If $X$ is an infinite set, we can find an arrangement of the elements in $X$: $n_1<n_2<\cdots<n_i<\cdots(n_i\in X)$. Thus we get an increasing subsequence of $\{a_n\}$: $a_{n_1},a_{n_2},\cdots,a_{n_i},\cdots$.\\
-	If $X$ is a finite set, denote $N=\max X$. For every $n>N$, there exists a number $k>n$ such that $a_k<a_n$. Let $n_1=N+1$ and there exists a number $n_2>n_1$ such that $a_{n_2}<a_{n_1}$. Since $n_2$ is also greater than $N$, there exists $n_3>n_2$ such that $a_{n_3}<a_{n_2}$. Repeating this process will come to a decreasing subsequence of $\{a_n\}$.
-\end{proof}
 
 \chapterimage{chapter_head_5.pdf}
 
