@@ -42,7 +42,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+\documentclass[12pt,fleqn]{book} % Default font size and left-justified equations
 
 %----------------------------------------------------------------------------------------
 
@@ -89,7 +89,7 @@
 
 \noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
 
-\noindent \textit{First printing, March 2013} % Printing/edition date
+%\noindent \textit{First printing, March 2013} % Printing/edition date
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
@@ -449,6 +449,26 @@ given prices $p\gg 0$ and wealth level $w > 0$ can now be stated as the followin
 	 \end{enumerate}
 \end{proposition}
 
+\begin{definition}[Indirect Utility Function]
+	For each $(p, w) \gg 0$, the utility value of the UMP is denoted $v(p, w)\in \mathbb{R}$. The function $v(p, w)$ is called the \emph{indirect utility function}. It is equal to $u(x^*)$ for any $x^*\in x(p, w)$, which is
+	\[
+	v(p, w)=u(x(p, w))=\max_{x\ge 0}\, u(x)\ \mathrm{s.t.}\  p\cdot x\le w.
+	\]
+	
+\end{definition}
+
+
+\begin{proposition}
+	Suppose that $u(\cdot)$ is a continuous utility function representing a
+	locally nonsatiated preference relation $\succsim$ defined on the consumption set $X=\mathbb{R}_+^L$. The indirect utility function $v(p, w)$ is	
+	\begin{enumerate}
+		\item Homogeneous of degree zero.
+		\item Strictly increasing in $w$ and nonincreasing in $p_l$ for any $l$.
+		\item Quasiconvex: the set $\{(p, w)| v(p, w)\le \bar{v}\}$ is convex for any $\bar{v}$.
+		\item Continuous in $p$ and $w$. 
+	\end{enumerate}
+\end{proposition}
+
 \begin{theorem}[Kuhn Tucker Conditions in UMP]
 	if $x^* \in x(p,w)$ is a solution to the UMP and $u(x)$ is continuously differentiable, then there exists a
 	Lagrange multiplier $\lambda\ge0$ such that for all $l = 1,\cdots, L$:
@@ -467,29 +487,11 @@ the shadow value of relaxing the constraint in the UMP. It therefore equals the 
 To see this directly, consider for simplicity the case where $x(p, w)$
 is a differentiable function and $x(p, w) \gg 0$. Thus we have
 \[
-D_wu(x(p,w))=\nabla u(x(p,w))\cdot D_wx(p,w)=\lambda p\cdot D_wx(p,w)=\lambda,
+D_wv(p,w)=D_wu(x(p,w))=\nabla u(x(p,w))\cdot D_wx(p,w)=\lambda p\cdot D_wx(p,w)=\lambda,
 \]
 where the last equality follows because $p\cdot x(p, w) = w$ holds for all $w$ and differentiate it with respect to $w$ shows $p\cdot D_wx(p,w)= 1$.
 
-\begin{definition}[Indirect Utility Function]
-	For each $(p, w) \gg 0$, the utility value of the UMP is denoted $v(p, w)\in \mathbb{R}$. It is equal to $u(x^*)$ for any $x^*\in x(p, w)$, denoted as
-	\[
-	v(p, w)=u(x(p, w)).
-	\]
-	
-\end{definition}
 
-
-\begin{proposition}
-Suppose that $u(\cdot)$ is a continuous utility function representing a
-locally nonsatiated preference relation $\succsim$ defined on the consumption set $X=\mathbb{R}_+^L$. The indirect utility function $v(p, w)$ is	
-\begin{enumerate}
-	\item Homogeneous of degree zero.
-	\item Strictly increasing in $w$ and nonincreasing in $p_l$ for any $l$.
-	\item Quasiconvex: the set $\{(p, w)| v(p, w)\le \bar{v}\}$ is convex for any $\bar{v}$.
-	\item Continuous in $p$ and $w$. 
-\end{enumerate}
-\end{proposition}
 
 \section{The Expenditure Minimization Problem}
 
@@ -497,25 +499,17 @@ In this section, we study the following expenditure minimization problem (EMP) f
 $p\gg 0$ and $u > u(0)$:
 \begin{align*}
 \min_{x\ge 0} \quad &  p\cdot x\\
-& \mathrm{s.t.}\ \; u(x)\le u.
+& \mathrm{s.t.}\ \; u(x)\ge u.
 \end{align*}
 
 
-\begin{proposition}
-Proposition 3.E.1: Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated preference relation $\succsim$ defined on the consumption set $X=\mathbb{R}_+^L$ and that the price vector is $p \gg 0$. We have
-(i) If $x^*$ is optimal in the UMP when wealth is $w > 0$, then $x^*$ is optimal in the
-EMP when the required utility level is $u(x^*)$. Moreover, the minimized
-expenditure level in this EMP is exactly $w$.
-(ii) If $x^*$ is optimal in the EMP when the required utility level is $u > u(0)$, then $x^*$ is optimal in the UMP when wealth is $p\cdot x^*$. Moreover, the maximized
-utility level in this UMP is exactly $u$.
 
-\end{proposition}
 
 
 \begin{definition}[Hicksian Demand Correspondence/Function]
 The set of optimal commodity vectors in the EMP is denoted $h(p, u)$ and is known as the Hicksian demand correspondence, or function if single-valued. That is
 \[
-h(\cdot,\cdot):\;(p,u)\mapsto \{x^*\in\mathbb{R}_+^L|\;p\cdot x^*=\min_{x\ge 0}\, p\cdot x\;\mathrm{s.t.}\; u(x)\le u\}
+h(\cdot,\cdot):\;(p,u)\mapsto \{x^*\in\mathbb{R}_+^L|\;p\cdot x^*=\min_{x\ge 0}\, p\cdot x\ \ \mathrm{s.t.}\; u(x)\ge u\}
 \]	
 \end{definition}
 
@@ -531,6 +525,30 @@ h(\cdot,\cdot):\;(p,u)\mapsto \{x^*\in\mathbb{R}_+^L|\;p\cdot x^*=\min_{x\ge 0}\
 		a unique element in $h(p, u)$.
 	\end{enumerate}
 \end{proposition}
+
+\begin{definition}[Expenditure Function]
+	Given prices $p \gg 0$ and required utility level $u > u(0)$, the value of the EMP is denoted
+	$e(p, u)$. The function $e(p, u)$ is called the \emph{expenditure function}. It is equal to $p\cdot h^*$ for any $h^*\in h(p, u)$, which is
+	\[
+	e(p, u)=p\cdot h(p, u)=\min_{x\ge 0}\, p\cdot x\ \ \mathrm{s.t.}\; u(x)\ge u.
+	\]
+	
+\end{definition}
+
+
+\begin{proposition}
+Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated preference relation $\succsim$ defined on the consumption set $X=\mathbb{R}_+^L$:.
+The expenditure function $e(p, u)$ is
+\begin{enumerate}
+	\item  Homogeneous of degree one in $p$.
+    \item  Strictly increasing in $u$ and nondecreasing in $p_l$, for any $l$.
+	\item  Concave in $p$.
+	\item  Continuous in $p$ and $u$.
+\end{enumerate}
+
+
+\end{proposition}
+
 
 \begin{theorem}[Kuhn Tucker Conditions in EMP]
 	if $x^* \in h(p,w)$ is a solution to the EMP and $u(x)$ is continuously differentiable, then there exists a
@@ -549,6 +567,246 @@ h(\cdot,\cdot):\;(p,u)\mapsto \{x^*\in\mathbb{R}_+^L|\;p\cdot x^*=\min_{x\ge 0}\
 
 \section{Relationships between Demand, Indirect Utility,
 	and Expenditure Functions}
+\begin{proposition}
+	Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated preference relation $\succsim$ defined on the consumption set $X=\mathbb{R}_+^L$ and that the price vector is $p \gg 0$. We have
+	\begin{enumerate}
+		\item  If $x^*$ is optimal in the UMP when wealth is $w > 0$, then $x^*$ is optimal in the
+		EMP when the required utility level is $u(x^*)$. Moreover, the minimized	expenditure level in this EMP is exactly $w$. It follows that $\forall p\gg0,\ w>0,\ u>u(0)$,
+		\begin{align*}
+			&h(p,v(p,w))=x(p,w),\\
+			&e(p,v(p,w))=w.
+		\end{align*}
+		
+		\item If $x^*$ is optimal in the EMP when the required utility level is $u > u(0)$, then $x^*$ is optimal in the UMP when wealth is $p\cdot x^*$. Moreover, the maximized utility level in this UMP is exactly $u$. It follows that $\forall p\gg0,\ w>0,\ u>u(0)$,
+		\begin{align*}
+		&x(p,e(p,u))=h(p,u),\\
+		&v(p,e(p,u))=u.
+		\end{align*}
+	\end{enumerate}
+
+	
+\end{proposition}
+
+\chapter{Aggregate Demand}
+
+\chapter{Production}
+
+\section{Production Set}
+A production vector (also known as an input-output, or netput, vector, or as a production plan) is a vector $y = (y_1,\cdots ,y_L)\in\mathbb{R}^L$ that describes the (net) outputs of the $L$ commodities from a production process. We adopt the convention that positive numbers denote outputs and negative numbers denote inputs. Some elements of a production vector may be zero; this just means that the process has no net output of that commodity.
+
+\begin{definition}[Production Set]
+	The set of all production vectors that constitute feasible plans for the firm is known as the \emph{production set} and is denoted
+	by $Y\subset \mathbb{R}^L$.
+\end{definition}
+
+
+\begin{definition}[Transformation Function]
+It is somctimes convenient to describe the production set $Y$ using a function $F(\cdot)$, called the \emph{transformation function}. The transformation function $F(\cdot)$ has the property
+that $Y = \{y\in\mathbb{R}^L|F(y)\le 0\} $ and $F(y) = 0$ if and only if $y$ is an element of the boundary of $Y$. The set of boundary points of $Y = \{y\in\mathbb{R}^L|F(y)\le 0\}$, is known as the \emph{transformation frontier}.
+\end{definition}
+
+	
+\begin{definition}[Marginal Rate of Transformation]
+	If $F(\cdot)$ is differentiable, and if the production vector $\bar{y}$ satisfies $F(\bar{y}) = 0$, then for any commodities $l$ and $k$, the ratio 
+	\[
+	MRT_{lk}(\bar{y})=\frac{\frac{\partial F(\bar{y})}{\partial y_l}}{\frac{\partial F(\bar{y})}{\partial y_k}}
+	\]
+	is called the marginal rate of transformation (MRT) of good $l$ for good $k$ at $\bar{y}$.
+\end{definition}	
+	
+\begin{definition}[Production Function]
+	One of the most frequently encountered production models is that in which there	is a single output. A single-output technology is commonly described by means of a \emph{production function} $f(z)$ that gives the maximum amount $q$ of output that can be
+	produced using input amounts $(z_1,z_2,\cdots,z_{L-1})\ge0$. For example, if the output is good $L$, then (assuming that output can be disposed of at no cost) the production function
+	$f(\cdot)$ gives rise to the production set:
+	\[
+	Y = \{(-z_1,-z_2,\cdots,-z_{L-1},q)\in\mathbb{R}^L\;|\;q-f(z_1,z_2,\cdots,z_{L-1})\le0,(z_1,z_2,\cdots,z_{L-1})\ge0\}.
+	\]
+	
+\end{definition}
+
+\begin{definition}[Input Requirement Set]
+Given the production function $f(\cdot)$ and the required output $q$, the corresponding \emph{input requirement set} is
+	\[
+	V(q) = \{(z_1,z_2,\cdots,z_{L-1})\in\mathbb{R}_+^{L-1}\;|\;f(z_1,z_2,\cdots,z_{L-1})\ge q\}.
+	\]
+	
+\end{definition}	
+	
+\begin{proposition}
+If $f$ is a production function and $V(q)$ is the corresponding input requirement set, then
+\[
+f\ \text{is quasi-concave} \iff V(q)\ \text{is convex}.
+\]
+\end{proposition}	
+
+\begin{proposition}
+	If $f$ is a production function and $Y$ is the corresponding production set, then
+	\[
+	f\ \text{is concave} \iff Y\ \text{is convex}.
+	\]	
+\end{proposition}
+
+\begin{definition}[Marginal Rate of Technical Substitution]
+Holding the level of output fixed, we can define the \emph{marginal rate of technical substitution} (MRTS) of input $l$ for input $k$ at $\bar{z}$ as
+   \[
+   MRTS_{lk}(\bar{z})=\frac{\frac{\partial f(\bar{z})}{\partial z_l}}{\frac{\partial f(\bar{z})}{\partial z_k}}=-\frac{dz_k}{dz_l}.
+   \]
+	
+\end{definition}	
+	
+\begin{definition}[Elasticity of Substitution]
+Elasticity of substitution is the elasticity of the ratio of two inputs function with respect to the ratio of their marginal products, that is
+	\[
+    \varepsilon_{lk}=\frac{d\ln\frac{z_k}{z_l}}{d\ln MRTS_{lk}}=\frac{d\ln\frac{z_k}{z_l}}{d\ln\frac{f_l(z_l)}{f_k(z_k )}}.
+	\]
+	
+\end{definition}	
+
+
+\begin{definition}[Increasing Returns to Scale]
+	The	production process exhibits \emph{nondecreasing returns to scale} if for any $y\in Y$, we have $\alpha y\in Y$ for any scale $\alpha > 1$. 
+	
+	The	production function $f$ exhibits \emph{increasing returns to scale} (IRTS) if for all $z\in\mathbb{R}_+^{L-1}$ and $t>1$ we have
+	\[
+		f(tz)> tf(z). 
+	\]
+
+\end{definition}
+
+\begin{definition}[Decreasing Returns to Scale]
+	The	production process exhibits \emph{nonincreasing returns to scale} if for any $y\in Y$, we have $\alpha y\in Y$ for any scale $0\le\alpha\le1$. 
+	
+	The	production function $f$ exhibits \emph{decreasing returns to scale} (DRTS) if for all $z\in\mathbb{R}_+^{L-1}$ and $t>1$ we have
+    \[
+    f(tz)< tf(z). 
+    \]	
+\end{definition}
+
+\begin{definition}[Constant Returns to Scale]
+	The	production process exhibits \emph{constant returns to scale} if for any $y\in Y$, we have $\alpha y\in Y$ for any scale $\alpha\ge0$. 
+	
+	The	production function $f$ exhibits \emph{constant returns to scale} (CRTS) if for all $z\in\mathbb{R}_+^{L-1}$ and $t\ge0$ we have
+	\[
+	f(tz)=tf(z). 
+	\]	
+\end{definition}
+
+\begin{definition}[Homogeneity]
+	The	production function $f(z)$ is \emph{homogeneous} of degree $k$ if and only if $\forall t > 0$,
+	\[
+	f (tz) = t^k f (z).
+	\]	
+\end{definition}
+
+\begin{proposition}
+	If the production function $f(z)$ is homogeneous of degree $k$, then
+	\begin{itemize}
+		\item $k > 1 \iff$ IRTS
+		\item $k < 1 \iff$ DRTS
+		\item $k = 1 \iff$ CRTS
+	\end{itemize}
+
+\end{proposition}
+
+\begin{proposition}
+	If $f(z)$ is homogeneous of degree $k$, then $f_i(z)=\frac{\partial f(z)}{\partial z_i}$ is homogeneous of degree $k-1$.
+\end{proposition}
+
+\begin{proposition}
+	If $f(z)$ is homogeneous of degree $k$, then a ray from the origin cuts all isoquants at points with the same slope.
+\end{proposition}
+
+\begin{proposition}
+	If the production $f(z)$ is concave, it must exhibit decreasing returns to scale. However, the converse is not true.
+\end{proposition}
+
+
+\begin{definition}[Elasticity of Scale]
+	If we scale input vector by $t > 0$, output is scaled to $q(t)=f (tz)$. Elasticity of scale is
+	\[
+	e(z)=\left.\frac{t}{q(t)}\frac{dq(t)}{dt}\right|_{t=1}
+	\]	
+\end{definition}
+
+
+\begin{definition}[Local Returns to Scale]
+	The	production function $f(z)$ exhibits
+	\begin{itemize}
+	\item locally IRTS if $e(z) > 1$
+	\item locally DRTS if $e(z) < 1$	
+	\item locally CRTS if $e(z) = 1$
+	\end{itemize}
+\end{definition}
+
+\begin{definition}[Homotheticity]
+	$f (z)$ is \emph{homothetic} if it can be written as $f (z) = g(h(z))$, where $g : R\rightarrow R$ is a strictly increasing function, and $h : R_+^L\rightarrow R_+$ is a function
+	that is homogeneous of degree one.	
+\end{definition}
+
+
+\section{Profit Maximization Problem}
+Given a price vector $p \gg 0$ and a production vector $y\in R^L$, the profit generated by implementing $y$ is $p\cdot y$. By the sign convention, this is precisely the total revenue minus the total cost. Given the technological constraints represented by its production set $Y$, the firm's profit maximization problem (PMP) is then
+\begin{align*}
+\max_{y} \quad &  p\cdot y\\
+& \mathrm{s.t.}\ \; y\in Y.
+\end{align*}
+Using a transformation function $F(\cdot)$ to describe $Y$, we can equivalently state the PMP as
+\begin{align*}
+\max_{y} \quad &  p\cdot y\\
+& \mathrm{s.t.}\ \; F(y)\le0.
+\end{align*}
+
+\begin{definition}[Supply Correspondence]
+	The set of optimal production vectors in the PMP is denoted $y(p)$ and is known as the supply correspondence. That is
+	\[
+	y(\cdot):\;p\mapsto \{y^*\in\mathbb{R}_+^L|p\cdot y^*=\max_{y}\, p\cdot y\ \ \mathrm{s.t.}\;F(y)\le0\}.
+	\]	
+\end{definition}
+
+\begin{definition}[Profit Function]
+	Given a production set $Y$, the firm's profit function $\pi(p)$ associates the value of the solution to the PMP to every $p$. That is
+	\[
+	\pi(p)=p\cdot y(p)=\max_{y}\, p\cdot y\ \ \mathrm{s.t.}\; F(y)\le0.
+	\]
+\end{definition}
+
+\begin{proposition}
+	If the production set $Y$ exhibits nondecreasing returns to scale, then either $\pi(p)\le 0$ or $\pi(p)=+\infty$.
+\end{proposition}
+
+\begin{theorem}[Kuhn Tucker Conditions in PMP]
+	if $y^* \in y(p)$ is a solution to the PMP and $F(y)$ is continuously differentiable, then there exists a
+	Lagrange multiplier $\lambda\ge0$ such that for all $l = 1,\cdots, L$:
+	\[
+	p_l=\lambda\frac{\partial F(y^*)}{\partial y_l}
+	\]
+	or equivalently in matrix notation, where $\nabla F(x)= \left[\frac{\partial F(x)}{\partial y_l},\frac{\partial F(x)}{\partial y_l},\cdots,\frac{\partial F(x)}{\partial y_L} \right]^\mathrm{T}$,
+    \[
+    p=\lambda\nabla F(y^*).
+    \]
+\end{theorem}
+
+
+When $Y$ corresponds to a single-output technology with differentiable production function $f(z)$, we can view the firm's decision as simply a choice over its input levels $z$. In this special case, we shall let the scalar $p > 0$ denote the price of the firm's output and the vector $w \gg0$ denote its input prices. Then PMP can be stated as
+\begin{align*}
+\max_{z,q} \quad &  pq-w\cdot z\\
+& \mathrm{s.t.}\ \; q\le f(z), \ z\ge 0.
+\end{align*}
+
+
+\begin{theorem}[Kuhn Tucker Conditions in PMP]
+	if $(z^*,q^*)$ is a solution to the PMP and $f(z)$ is continuously differentiable, then for all $l = 1,\cdots, L$:
+	\[
+	p\frac{\partial f(z^*)}{\partial y_l}\le w_i,\ \;\text{with equality if } z^*_l > 0,
+	\]
+	or equivalently in matrix notation, where $\nabla f(z)= \left[\frac{\partial f(x)}{\partial z_l},\frac{\partial f(z)}{\partial z_l},\cdots,\frac{\partial f(z)}{\partial z_L} \right]^\mathrm{T}$,
+	\begin{align*}
+	& p\nabla f(z^*)\le w, \\
+	&(p\nabla f(z^*)- w)\cdot z^*= 0.
+	\end{align*}
+	
+\end{theorem}
+
 
 
 
